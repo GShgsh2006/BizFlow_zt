@@ -3,13 +3,14 @@
 from sqlalchemy.orm import Session
 from BizFlow.shujuku.user import users,task
 from fastapi import HTTPException
+from BizFlow.hdwj.Exception.exceptions import hdwjException
 def salary(ids:int,db:Session):
 
     name=db.query(users.name).filter(users.id == ids).scalar()
     if name:
         renwu=db.query(task).filter(task.assignee_id == ids,task.status=="已完成").all()
-        Salary=sum([i.amount for i in renwu])
+        Salary=sum([(i.amount or 0) for i in renwu])
         return Salary
     else:
-        raise HTTPException(status_code=404,detail="数据库中找不到名字请重新输入")
+        raise hdwjException(404,"数据库中找不到名字请重新输入")
 

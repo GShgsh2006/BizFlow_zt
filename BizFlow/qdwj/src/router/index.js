@@ -40,6 +40,12 @@ const routes = [
     name: 'review',
     component: () => import('../views/AdminReviewView.vue'),
     meta: { role: '董事长' }
+  },
+  {
+    path: '/archive',
+    name: 'archive',
+    component: () => import('../views/ArchiveExportView.vue'),
+    meta: { role: '董事长' }
   }
 ]
 

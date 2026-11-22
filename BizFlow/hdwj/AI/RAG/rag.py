@@ -17,5 +17,5 @@ async def rag_b(request: str):
         rrf[idx] = rrf.get(idx, 0.0) + 1.0 / (rank + 1)
     for rank, idx in enumerate(xlcxz.keys()):
         rrf[idx] = rrf.get(idx, 0.0) + 1.0 / (rank + 1)
-    top = sorted(rrf.items(), key=lambda x: x[1], reverse=True)[:2]
+    top = sorted(rrf.items(), key=lambda x: x[1], reverse=True)[:4]
     return [seg[idx].page_content for idx, _score in top]

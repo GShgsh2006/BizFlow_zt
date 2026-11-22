@@ -61,3 +61,12 @@ def get_db():
 
     finally:
         db.close()
+from contextlib import contextmanager
+
+@contextmanager
+def get_db_session():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

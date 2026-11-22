@@ -2,9 +2,9 @@
 #员工接受任务（已读未读表）
 from sqlalchemy.orm import Session
 from BizFlow.shujuku.user import notice, task,users
-
 from fastapi import Depends, HTTPException
 import logging
+from BizFlow.hdwj.Exception.exceptions import hdwjException
 
 
 def notice_wd(db: Session, token: dict ):
@@ -65,7 +65,7 @@ def notice_wd(db: Session, token: dict ):
             logging.error("查询未读通知失败: %s", str(e))
             raise HTTPException(status_code=500, detail="查询未读信息失败")
     else:
-        raise HTTPException(status_code=500,detail="数据库里没有定义该职位，你无权访问")
+        raise hdwjException(500,"数据库里没有定义该职位，你无权访问")
 
 #判断未读是否变成已读
 #传进来的是 task 表的任务 id（任务查询页点开哪条就传哪条）。
@@ -90,7 +90,7 @@ def judge(id:int, db: Session, token: dict | None = None):
             db.commit()
         except Exception:
             db.rollback()
-            raise HTTPException(status_code=500, detail="标记已读失败，请稍后重试")
+            raise hdwjException(500, "标记已读失败，请稍后重试")
         return {"message": "已标记为已读"}
     return {"message": "这条任务已经是已读"}
 

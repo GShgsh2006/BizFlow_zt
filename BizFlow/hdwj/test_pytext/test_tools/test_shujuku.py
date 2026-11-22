@@ -1,4 +1,5 @@
-# BizFlow/hdwj/test_pytext/tools/test_shujuku.py
+# BizFlow/hdwj/test_pytext/test_tools/test_shujuku.py
+
 
 import pytest
 
@@ -9,17 +10,19 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 
-# ==============================
-# 1. 创建临时 SQLite
-# ==============================
+
+# =====================================
+# 1. 创建临时 SQLite 数据库
+# =====================================
 
 test_engine = create_engine(
-    "sqlite://",
+    "sqlite:///:memory:",
     connect_args={
         "check_same_thread": False
     },
     poolclass=StaticPool,
 )
+
 
 
 TestingSessionLocal = sessionmaker(
@@ -30,42 +33,45 @@ TestingSessionLocal = sessionmaker(
 
 
 
-# ==============================
-# 2. 创建测试数据库依赖
-# ==============================
+# =====================================
+# 2. 导入 Base 和全部模型
+# =====================================
 
-def override_get_db():
-
-    db = TestingSessionLocal()
-
-    try:
-        yield db
-
-    finally:
-        db.close()
+from BizFlow.shujuku.Management import Base
 
 
+# 必须导入模型
+# 让 SQLAlchemy 注册所有表结构
 
-# ==============================
-# 3. 创建所有测试表
-# ==============================
+from BizFlow.shujuku.user import (
+    users,
+    task,
+    employees,
+    yg_tjs,
+    notice,
+    yynj,
+    yyygb,
+    ai_jl,
+)
 
-@pytest.fixture(autouse=True)
-def setup_database():
 
-    # 必须导入模型
-    # 让 SQLAlchemy 注册表结构
 
-    from BizFlow.shujuku.Management import Base
+# =====================================
+# 3. 创建临时数据库表
+# =====================================
 
-    from BizFlow.shujuku.user import (
-        users,
-        task,
-        yg_tjs
+@pytest.fixture(
+    scope="session",
+    autouse=True
+)
+def create_test_tables():
+
+
+    print(
+        "测试数据库表:",
+        list(Base.metadata.tables.keys())
     )
 
-
-    # 创建所有表
 
     Base.metadata.create_all(
         bind=test_engine
@@ -75,69 +81,88 @@ def setup_database():
     yield
 
 
-    # 测试结束删除
-
     Base.metadata.drop_all(
         bind=test_engine
     )
 
 
 
-# ==============================
-# 4. 测试客户端
-# ==============================
+# =====================================
+# 4. 覆盖 FastAPI 数据库依赖
+# =====================================
 
-@pytest.fixture
-def client():
+def override_get_db():
 
-    from BizFlow.hdwj.app import app
-    from BizFlow.shujuku.Management import get_db
-
-
-    old = app.dependency_overrides.copy()
-
-
-    # 替换真实 MySQL
-
-    app.dependency_overrides[get_db] = override_get_db
-
-
-    test_client = TestClient(
-        app,
-        headers={
-            "Authorization":
-            "Bearer fake_test_token"
-        }
-    )
-
-
-    try:
-
-        yield test_client
-
-
-    finally:
-
-        test_client.close()
-
-        app.dependency_overrides.clear()
-
-        app.dependency_overrides.update(old)
-
-
-
-# ==============================
-# 5. 直接操作临时数据库
-# ==============================
-
-@pytest.fixture
-def db_session():
 
     db = TestingSessionLocal()
+
 
     try:
 
         yield db
+
+
+    finally:
+
+        db.close()
+
+
+
+# =====================================
+# 5. FastAPI 测试客户端
+# =====================================
+
+@pytest.fixture
+def client():
+
+
+    from BizFlow.hdwj.app import app
+
+    from BizFlow.shujuku.Management import get_db
+
+
+
+    old_override = (
+        app.dependency_overrides.copy()
+    )
+
+
+    # 使用测试 SQLite
+    app.dependency_overrides[get_db] = override_get_db
+
+
+
+    with TestClient(app) as test_client:
+
+        yield test_client
+
+
+
+    # 恢复
+
+    app.dependency_overrides.clear()
+
+    app.dependency_overrides.update(
+        old_override
+    )
+
+
+
+# =====================================
+# 6. 测试直接操作数据库
+# =====================================
+
+@pytest.fixture
+def db_session():
+
+
+    db = TestingSessionLocal()
+
+
+    try:
+
+        yield db
+
 
     finally:
 

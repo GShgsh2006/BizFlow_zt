@@ -24,6 +24,10 @@ async def call_ai(
         用户输入的问题
     """
     rag=await rag_b(user_question)
+
+    # 先把这一轮检索到的片段发给前端。RAGAS 的 faithfulness 必须拿它当依据，
+    # 前端点"评估"时原样回传，不再走模块级全局变量（多人并发会串号）。
+    yield f"data: {json.dumps({'type': 'contexts', 'content': rag}, ensure_ascii=False)}\n\n"
     # 记忆直接从库里按登录人 id 取（最近 10 条），不再依赖 ai_ly 的模块级全局 a：
     # 全局是所有请求共享的，多个人同时用会互相串号
     aijiyi= [
@@ -41,7 +45,6 @@ async def call_ai(
         "zsd": rag,
         "request_ku": user_question
     }):
-
         # 1. 思考过程
         reasoning = chunk.additional_kwargs.get("reasoning_content", "")
         if reasoning:

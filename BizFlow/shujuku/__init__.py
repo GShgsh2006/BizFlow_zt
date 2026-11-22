@@ -5,3 +5,5 @@ from BizFlow.shujuku.Management import Base, engine, SessionLocal  # noqa: F401
 
 # 把模型导入进来，让 Alembic 能扫到你的表
 from BizFlow.shujuku.user import users, task,employees,yg_tjs,notice,yynj,yyygb
+from BizFlow.shujuku.user import ai_jl, ai_jy_dq, ai_cq_jiy
+from BizFlow.shujuku.user import AiCkptThread, AiLongMemory

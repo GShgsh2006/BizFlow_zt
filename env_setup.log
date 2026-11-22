@@ -1,0 +1,585 @@
+start at 11/21/2026 17:15:32
+[17:15:32] creating conda env bizflow (python 3.12)...
+3 channel Terms of Service accepted
+Channels:
+ - defaults
+Platform: win-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 26.7.3
+    latest version: 26.10.0
+
+Please update conda by running
+
+    $ conda self update
+
+
+
+## Package Plan ##
+
+  environment location: D:\Tool\anaconda3\envs\bizflow
+
+  added / updated specs:
+    - python=3.12
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    packaging-26.3             |  py312haa95532_0         374 KB
+    pip-26.2.2                 |     pyhc872135_0         1.1 MB
+    python-3.12.16             |       hd7b1df3_0        14.7 MB
+    setuptools-84.2.1          |  py312haa95532_0         1.3 MB
+    tk-8.6.15                  |       hf199647_0         3.5 MB
+    wheel-0.48.0               |  py312haa95532_0         100 KB
+    ------------------------------------------------------------
+                                           Total:        21.2 MB
+
+The following NEW packages will be INSTALLED:
+
+  bzip2              pkgs/main/win-64::bzip2-1.0.8-h2bbff1b_6 
+  ca-certificates    pkgs/main/noarch::ca-certificates-2026.11.5-h382c6e5_0 
+  libexpat           pkgs/main/win-64::libexpat-2.10.0-hd7fb8db_0 
+  libffi             pkgs/main/win-64::libffi-3.4.8-h42d73b9_3 
+  libzlib            pkgs/main/win-64::libzlib-1.3.2-h1c6eee0_0 
+  openssl            pkgs/main/win-64::openssl-3.5.9-hbb43b14_0 
+  packaging          pkgs/main/win-64::packaging-26.3-py312haa95532_0 
+  pip                pkgs/main/noarch::pip-26.2.2-pyhc872135_0 
+  python             pkgs/main/win-64::python-3.12.16-hd7b1df3_0 
+  setuptools         pkgs/main/win-64::setuptools-84.2.1-py312haa95532_0 
+  sqlite             pkgs/main/win-64::sqlite-3.54.1-hee5a0db_0 
+  tk                 pkgs/main/win-64::tk-8.6.15-hf199647_0 
+  tzdata             pkgs/main/noarch::tzdata-2026c-he532380_0 
+  ucrt               pkgs/main/win-64::ucrt-10.0.22621.0-haa95532_0 
+  vc                 pkgs/main/win-64::vc-14.3-h2df5915_12 
+  vc14_runtime       pkgs/main/win-64::vc14_runtime-14.44.35208-h4927774_12 
+  vs2015_runtime     pkgs/main/win-64::vs2015_runtime-14.44.35208-ha6b5a95_12 
+  wheel              pkgs/main/win-64::wheel-0.48.0-py312haa95532_0 
+  xz                 pkgs/main/win-64::xz-5.8.4-hb851c79_0 
+  zlib               pkgs/main/win-64::zlib-1.3.2-h1c6eee0_0 
+
+
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate bizflow
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+WARNING conda.conda_pypi.main:notify_externally_managed_future(156): 
+  Did you know? You can install many PyPI packages with conda
+  using the conda-pypi beta. Get started:
+    https://docs.conda.io/projects/conda/en/stable/new-features.html
+
+[17:16:25] python: Python 3.12.16
+[17:16:25] upgrading pip...
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: pip in D:\Tool\anaconda3\envs\bizflow\Lib\site-packages (26.2.2)
+Collecting pip
+  Downloading pip-26.3-py3-none-any.whl (2.0 MB)
+     ---------------------------------------- 2.0/2.0 MB 6.4 MB/s  0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 26.2.2
+    Uninstalling pip-26.2.2:
+      Successfully uninstalled pip-26.2.2
+  WARNING: The scripts pip.exe, pip3.12.exe and pip3.exe are installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed pip-26.3
+[17:16:37] installing requirements.txt (this takes a while)...
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting aio-pika==10.1.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 1))
+  Downloading aio_pika-10.1.1-py3-none-any.whl (59 kB)
+Collecting aiohappyeyeballs==2.7.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 2))
+  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Collecting aiohttp==3.14.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 3))
+  Downloading aiohttp-3.14.3-cp312-cp312-win_amd64.whl (476 kB)
+Collecting aiormq==7.2.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 4))
+  Downloading aiormq-7.2.2-py3-none-any.whl (39 kB)
+Collecting aiosignal==1.4.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 5))
+  Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Collecting aiosqlite==0.22.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 6))
+  Downloading aiosqlite-0.22.1-py3-none-any.whl (17 kB)
+Collecting alembic==1.20.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 7))
+  Downloading alembic-1.20.0-py3-none-any.whl (268 kB)
+Collecting annotated-doc==0.0.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 8))
+  Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Collecting annotated-types==0.8.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 9))
+  Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Collecting anyio==4.14.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 10))
+  Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
+Collecting attrs==26.1.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 11))
+  Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+Collecting banks==2.5.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 12))
+  Downloading banks-2.5.0-py3-none-any.whl (38 kB)
+Collecting bcrypt==4.0.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 13))
+  Downloading bcrypt-4.0.1-cp36-abi3-win_amd64.whl (152 kB)
+Collecting build==1.6.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 14))
+  Downloading build-1.6.1-py3-none-any.whl (31 kB)
+Collecting cachetools==7.1.7 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 15))
+  Downloading cachetools-7.1.7-py3-none-any.whl (16 kB)
+Collecting certifi==2026.7.22 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 16))
+  Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Collecting charset-normalizer==3.5.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 17))
+  Downloading charset_normalizer-3.5.0-cp312-cp312-win_amd64.whl (200 kB)
+Collecting chromadb==1.5.9 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 18))
+  Downloading chromadb-1.5.9-cp39-abi3-win_amd64.whl (23.5 MB)
+     ---------------------------------------- 23.5/23.5 MB 18.6 MB/s  0:00:01
+Collecting click==8.4.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 19))
+  Downloading click-8.4.2-py3-none-any.whl (119 kB)
+Collecting colorama==0.4.6 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 20))
+  Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting dataclasses-json==0.6.7 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 21))
+  Downloading dataclasses_json-0.6.7-py3-none-any.whl (28 kB)
+Collecting defusedxml==0.7.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 22))
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Collecting Deprecated==1.3.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 23))
+  Downloading deprecated-1.3.1-py2.py3-none-any.whl (11 kB)
+Collecting dirtyjson==1.0.8 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 24))
+  Downloading dirtyjson-1.0.8-py3-none-any.whl (25 kB)
+Collecting distro==1.9.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 25))
+  Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+Collecting dotenv==0.9.9 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 26))
+  Downloading dotenv-0.9.9-py2.py3-none-any.whl (1.9 kB)
+Collecting durationpy==0.11 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 27))
+  Downloading durationpy-0.11-py3-none-any.whl (4.1 kB)
+Collecting ecdsa==0.19.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 28))
+  Downloading ecdsa-0.19.2-py2.py3-none-any.whl (150 kB)
+Collecting et_xmlfile==2.0.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 29))
+  Downloading et_xmlfile-2.0.0-py3-none-any.whl (18 kB)
+Collecting fastapi==0.140.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 30))
+  Downloading fastapi-0.140.0-py3-none-any.whl (130 kB)
+Collecting filelock==3.32.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 31))
+  Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
+Collecting filetype==1.2.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 32))
+  Downloading filetype-1.2.0-py2.py3-none-any.whl (19 kB)
+Collecting flatbuffers==25.12.19 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 33))
+  Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Collecting frozenlist==1.8.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 34))
+  Downloading frozenlist-1.8.0-cp312-cp312-win_amd64.whl (44 kB)
+Collecting fsspec==2026.7.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 35))
+  Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
+Collecting googleapis-common-protos==1.75.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 36))
+  Downloading googleapis_common_protos-1.75.3-py3-none-any.whl (306 kB)
+Collecting greenlet==3.5.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 37))
+  Downloading greenlet-3.5.4-cp312-cp312-win_amd64.whl (247 kB)
+Collecting griffe==2.2.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 38))
+  Downloading griffe-2.2.0-py3-none-any.whl (5.1 kB)
+Collecting griffecli==2.2.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 39))
+  Downloading griffecli-2.2.0-py3-none-any.whl (11 kB)
+Collecting griffelib==2.2.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 40))
+  Downloading griffelib-2.2.0-py3-none-any.whl (166 kB)
+Collecting grpcio==1.83.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 41))
+  Downloading grpcio-1.83.0-cp312-cp312-win_amd64.whl (5.2 MB)
+     ---------------------------------------- 5.2/5.2 MB 14.2 MB/s  0:00:00
+Collecting h11==0.16.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 42))
+  Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Collecting hf-xet==1.6.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 43))
+  Downloading hf_xet-1.6.0-cp38-abi3-win_amd64.whl (4.0 MB)
+     ---------------------------------------- 4.0/4.0 MB 15.1 MB/s  0:00:00
+Collecting httpcore==1.0.9 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 44))
+  Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Collecting httptools==0.8.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 45))
+  Downloading httptools-0.8.0-cp312-cp312-win_amd64.whl (90 kB)
+Collecting httpx==0.28.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 46))
+  Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+Collecting httpx-sse==0.4.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 47))
+  Downloading httpx_sse-0.4.3-py3-none-any.whl (9.0 kB)
+Collecting huggingface_hub==1.27.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 48))
+  Downloading huggingface_hub-1.27.0-py3-none-any.whl (784 kB)
+     ---------------------------------------- 784.9/784.9 kB 16.3 MB/s  0:00:00
+Collecting idna==3.18 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 49))
+  Downloading idna-3.18-py3-none-any.whl (65 kB)
+Collecting importlib_resources==7.1.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 50))
+  Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
+Collecting iniconfig==2.3.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 51))
+  Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Collecting jieba==0.42.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 52))
+  Downloading jieba-0.42.1.tar.gz (19.2 MB)
+     ---------------------------------------- 19.2/19.2 MB 13.0 MB/s  0:00:01
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting Jinja2==3.1.6 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 53))
+  Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Collecting jiter==0.16.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 54))
+  Downloading jiter-0.16.0-cp312-cp312-win_amd64.whl (196 kB)
+Collecting joblib==1.5.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 55))
+  Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+Collecting jsonpatch==1.33 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 56))
+  Downloading jsonpatch-1.33-py2.py3-none-any.whl (12 kB)
+Collecting jsonpointer==3.1.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 57))
+  Downloading jsonpointer-3.1.1-py3-none-any.whl (7.7 kB)
+Collecting jsonschema==4.26.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 58))
+  Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Collecting jsonschema-specifications==2025.9.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 59))
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Collecting kubernetes==36.0.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 60))
+  Downloading kubernetes-36.0.3-py2.py3-none-any.whl (4.6 MB)
+     ---------------------------------------- 4.6/4.6 MB 18.5 MB/s  0:00:00
+Collecting langchain==1.3.15 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 61))
+  Downloading langchain-1.3.15-py3-none-any.whl (147 kB)
+Collecting langchain-chroma==1.1.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 62))
+  Downloading langchain_chroma-1.1.0-py3-none-any.whl (12 kB)
+Collecting langchain-classic==1.0.8 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 63))
+  Downloading langchain_classic-1.0.8-py3-none-any.whl (1.0 MB)
+     ---------------------------------------- 1.0/1.0 MB 16.6 MB/s  0:00:00
+Collecting langchain-community==0.4.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 64))
+  Downloading langchain_community-0.4.2-py3-none-any.whl (2.4 MB)
+     ---------------------------------------- 2.4/2.4 MB 13.5 MB/s  0:00:00
+Collecting langchain-core==1.5.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 65))
+  Downloading langchain_core-1.5.4-py3-none-any.whl (565 kB)
+     ---------------------------------------- 565.1/565.1 kB 6.4 MB/s  0:00:00
+Collecting langchain-experimental==0.4.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 66))
+  Downloading langchain_experimental-0.4.2-py3-none-any.whl (211 kB)
+Collecting langchain-milvus==0.4.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 67))
+  Downloading langchain_milvus-0.4.0-py3-none-any.whl (39 kB)
+Collecting langchain-ollama==1.1.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 68))
+  Downloading langchain_ollama-1.1.0-py3-none-any.whl (31 kB)
+Collecting langchain-protocol==0.0.18 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 69))
+  Downloading langchain_protocol-0.0.18-py3-none-any.whl (7.2 kB)
+Collecting langchain-text-splitters==1.1.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 70))
+  Downloading langchain_text_splitters-1.1.2-py3-none-any.whl (35 kB)
+Collecting langgraph==1.2.11 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 71))
+  Downloading langgraph-1.2.11-py3-none-any.whl (248 kB)
+Collecting langgraph-checkpoint==4.3.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 72))
+  Downloading langgraph_checkpoint-4.3.1-py3-none-any.whl (58 kB)
+Collecting langgraph-checkpoint-sqlite==3.1.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 73))
+  Downloading langgraph_checkpoint_sqlite-3.1.3-py3-none-any.whl (41 kB)
+Collecting langgraph-prebuilt==1.1.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 74))
+  Downloading langgraph_prebuilt-1.1.0-py3-none-any.whl (41 kB)
+Collecting langgraph-sdk==0.4.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 75))
+  Downloading langgraph_sdk-0.4.2-py3-none-any.whl (160 kB)
+Collecting langsmith==0.10.18 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 76))
+  Downloading langsmith-0.10.18-py3-none-any.whl (735 kB)
+     ---------------------------------------- 735.3/735.3 kB 15.3 MB/s  0:00:00
+Collecting llama-index==0.14.24 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 77))
+  Downloading llama_index-0.14.24-py3-none-any.whl (7.1 kB)
+Collecting llama-index-core==0.14.24 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 78))
+  Downloading llama_index_core-0.14.24-py3-none-any.whl (11.9 MB)
+     ---------------------------------------- 11.9/11.9 MB 17.4 MB/s  0:00:00
+Collecting llama-index-embeddings-openai==0.6.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 79))
+  Downloading llama_index_embeddings_openai-0.6.0-py3-none-any.whl (7.7 kB)
+Collecting llama-index-instrumentation==0.5.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 80))
+  Downloading llama_index_instrumentation-0.5.0-py3-none-any.whl (16 kB)
+Collecting llama-index-llms-openai==0.7.10 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 81))
+  Downloading llama_index_llms_openai-0.7.10-py3-none-any.whl (28 kB)
+Collecting llama-index-workflows==2.23.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 82))
+  Downloading llama_index_workflows-2.23.3-py3-none-any.whl (166 kB)
+Collecting Mako==1.4.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 83))
+  Downloading mako-1.4.1-py3-none-any.whl (80 kB)
+Collecting markdown-it-py==4.2.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 84))
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Collecting MarkupSafe==3.0.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 85))
+  Downloading markupsafe-3.0.3-cp312-cp312-win_amd64.whl (15 kB)
+Collecting marshmallow==3.26.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 86))
+  Downloading marshmallow-3.26.2-py3-none-any.whl (50 kB)
+Collecting mdurl==0.1.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 87))
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting mmh3==5.3.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 88))
+  Downloading mmh3-5.3.0-cp312-cp312-win_amd64.whl (41 kB)
+Collecting mpmath==1.3.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 89))
+  Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+     ---------------------------------------- 536.2/536.2 kB 8.8 MB/s  0:00:00
+Collecting multidict==6.7.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 90))
+  Downloading multidict-6.7.1-cp312-cp312-win_amd64.whl (46 kB)
+Collecting mypy_extensions==1.1.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 91))
+  Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Collecting narwhals==2.24.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 92))
+  Downloading narwhals-2.24.0-py3-none-any.whl (461 kB)
+Collecting nest-asyncio==1.6.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 93))
+  Downloading nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+Collecting networkx==3.6.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 94))
+  Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 16.6 MB/s  0:00:00
+Collecting nltk==3.10.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 95))
+  Downloading nltk-3.10.3-py3-none-any.whl (1.8 MB)
+     ---------------------------------------- 1.8/1.8 MB 16.3 MB/s  0:00:00
+Collecting numpy==2.5.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 96))
+  Downloading numpy-2.5.2-cp312-cp312-win_amd64.whl (12.5 MB)
+     ---------------------------------------- 12.5/12.5 MB 13.2 MB/s  0:00:00
+Collecting oauthlib==3.3.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 97))
+  Downloading oauthlib-3.3.1-py3-none-any.whl (160 kB)
+Collecting ollama==0.6.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 98))
+  Downloading ollama-0.6.2-py3-none-any.whl (15 kB)
+Collecting onnxruntime==1.30.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 99))
+  Downloading onnxruntime-1.30.0-cp312-cp312-win_amd64.whl (14.3 MB)
+     ---------------------------------------- 14.3/14.3 MB 12.5 MB/s  0:00:01
+Collecting openai==2.54.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 100))
+  Downloading openai-2.54.0-py3-none-any.whl (1.7 MB)
+     ---------------------------------------- 1.7/1.7 MB 22.2 MB/s  0:00:00
+Collecting openpyxl==3.1.5 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 101))
+  Downloading openpyxl-3.1.5-py2.py3-none-any.whl (250 kB)
+Collecting opentelemetry-api==1.44.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 102))
+  Downloading opentelemetry_api-1.44.0-py3-none-any.whl (60 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.44.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 103))
+  Downloading opentelemetry_exporter_otlp_proto_common-1.44.0-py3-none-any.whl (17 kB)
+Collecting opentelemetry-exporter-otlp-proto-grpc==1.44.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 104))
+  Downloading opentelemetry_exporter_otlp_proto_grpc-1.44.0-py3-none-any.whl (19 kB)
+Collecting opentelemetry-proto==1.44.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 105))
+  Downloading opentelemetry_proto-1.44.0-py3-none-any.whl (72 kB)
+Collecting opentelemetry-sdk==1.44.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 106))
+  Downloading opentelemetry_sdk-1.44.0-py3-none-any.whl (137 kB)
+Collecting opentelemetry-semantic-conventions==0.65b0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 107))
+  Downloading opentelemetry_semantic_conventions-0.65b0-py3-none-any.whl (204 kB)
+Collecting orjson==3.11.9 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 108))
+  Downloading orjson-3.11.9-cp312-cp312-win_amd64.whl (127 kB)
+Collecting ormsgpack==1.12.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 109))
+  Downloading ormsgpack-1.12.2-cp312-cp312-win_amd64.whl (117 kB)
+Collecting overrides==7.7.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 110))
+  Downloading overrides-7.7.0-py3-none-any.whl (17 kB)
+Requirement already satisfied: packaging==26.3 in D:\Tool\anaconda3\envs\bizflow\Lib\site-packages (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 111)) (26.3)
+Collecting pamqp==4.0.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 112))
+  Downloading pamqp-4.0.1-py3-none-any.whl (32 kB)
+Collecting pandas==3.0.5 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 113))
+  Downloading pandas-3.0.5-cp312-cp312-win_amd64.whl (9.8 MB)
+     ---------------------------------------- 9.8/9.8 MB 3.8 MB/s  0:00:02
+Collecting passlib==1.7.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 114))
+  Downloading passlib-1.7.4-py2.py3-none-any.whl (525 kB)
+     ---------------------------------------- 525.6/525.6 kB 5.6 MB/s  0:00:00
+Collecting pillow==12.3.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 115))
+  Downloading pillow-12.3.0-cp312-cp312-win_amd64.whl (7.2 MB)
+     ---------------------------------------- 7.2/7.2 MB 9.1 MB/s  0:00:00
+Collecting platformdirs==4.11.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 116))
+  Downloading platformdirs-4.11.4-py3-none-any.whl (23 kB)
+Collecting pluggy==1.6.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 117))
+  Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+Collecting propcache==0.5.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 118))
+  Downloading propcache-0.5.2-cp312-cp312-win_amd64.whl (42 kB)
+Collecting protobuf==7.35.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 119))
+  Downloading protobuf-7.35.1-cp310-abi3-win_amd64.whl (439 kB)
+Collecting pyasn1==0.6.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 120))
+  Downloading pyasn1-0.6.4-py3-none-any.whl (84 kB)
+Collecting pybase64==1.5.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 121))
+  Downloading pybase64-1.5.0-cp312-cp312-win_amd64.whl (44 kB)
+Collecting pydantic==2.13.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 122))
+  Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+Collecting pydantic-settings==2.15.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 123))
+  Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+Collecting pydantic_core==2.46.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 124))
+  Downloading pydantic_core-2.46.4-cp312-cp312-win_amd64.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 10.5 MB/s  0:00:00
+Collecting Pygments==2.20.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 125))
+  Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+     ---------------------------------------- 1.2/1.2 MB 10.4 MB/s  0:00:00
+Collecting pymilvus==3.0.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 126))
+  Downloading pymilvus-3.0.1-py3-none-any.whl (386 kB)
+Collecting pymilvus.model==0.3.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 127))
+  Downloading pymilvus_model-0.3.2-py3-none-any.whl (47 kB)
+Collecting PyMySQL==1.2.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 128))
+  Downloading pymysql-1.2.0-py3-none-any.whl (45 kB)
+Collecting PyPika==0.51.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 129))
+  Downloading pypika-0.51.1-py2.py3-none-any.whl (60 kB)
+Collecting pyproject_hooks==1.2.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 130))
+  Downloading pyproject_hooks-1.2.0-py3-none-any.whl (10 kB)
+Collecting pytest==9.1.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 131))
+  Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+Collecting python-dateutil==2.9.0.post0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 132))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Collecting python-dotenv==1.2.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 133))
+  Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Collecting python-jose==3.5.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 134))
+  Downloading python_jose-3.5.0-py2.py3-none-any.whl (34 kB)
+Collecting PyYAML==6.0.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 135))
+  Downloading pyyaml-6.0.3-cp312-cp312-win_amd64.whl (154 kB)
+Collecting rank-bm25==0.2.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 136))
+  Downloading rank_bm25-0.2.2-py3-none-any.whl (8.6 kB)
+Collecting redis==8.1.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 137))
+  Downloading redis-8.1.0-py3-none-any.whl (560 kB)
+     ---------------------------------------- 560.6/560.6 kB 9.6 MB/s  0:00:00
+Collecting referencing==0.37.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 138))
+  Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+Collecting regex==2026.7.19 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 139))
+  Downloading regex-2026.7.19-cp312-cp312-win_amd64.whl (277 kB)
+Collecting requests==2.34.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 140))
+  Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Collecting requests-oauthlib==2.0.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 141))
+  Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+Collecting requests-toolbelt==1.0.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 142))
+  Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+Collecting rich==15.0.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 143))
+  Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Collecting rpds-py==2026.6.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 144))
+  Downloading rpds_py-2026.6.3-cp312-cp312-win_amd64.whl (220 kB)
+Collecting rsa==4.9.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 145))
+  Downloading rsa-4.9.1-py3-none-any.whl (34 kB)
+Collecting safetensors==0.8.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 146))
+  Downloading safetensors-0.8.0-cp310-abi3-win_amd64.whl (355 kB)
+Collecting scikit-learn==1.9.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 147))
+  Downloading scikit_learn-1.9.0-cp312-cp312-win_amd64.whl (8.2 MB)
+     ---------------------------------------- 8.2/8.2 MB 14.1 MB/s  0:00:00
+Collecting scipy==1.18.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 148))
+  Downloading scipy-1.18.0-cp312-cp312-win_amd64.whl (36.6 MB)
+     ---------------------------------------- 36.6/36.6 MB 17.9 MB/s  0:00:02
+Collecting sentence-transformers==5.7.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 149))
+  Downloading sentence_transformers-5.7.0-py3-none-any.whl (611 kB)
+     ---------------------------------------- 611.3/611.3 kB 11.3 MB/s  0:00:00
+Collecting setuptools==84.0.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 150))
+  Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+     ---------------------------------------- 818.2/818.2 kB 11.8 MB/s  0:00:00
+Collecting shellingham==1.5.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 151))
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Collecting six==1.17.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 152))
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting sniffio==1.3.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 153))
+  Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+Collecting SQLAlchemy==2.0.51 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 154))
+  Downloading sqlalchemy-2.0.51-cp312-cp312-win_amd64.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 15.1 MB/s  0:00:00
+Collecting sqlite-vec==0.1.9 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 155))
+  Downloading sqlite_vec-0.1.9-py3-none-win_amd64.whl (292 kB)
+Collecting starlette==1.3.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 156))
+  Downloading starlette-1.3.1-py3-none-any.whl (73 kB)
+Collecting sympy==1.14.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 157))
+  Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+     ---------------------------------------- 6.3/6.3 MB 15.4 MB/s  0:00:00
+Collecting tenacity==9.1.4 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 158))
+  Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting threadpoolctl==3.6.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 159))
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Collecting tiktoken==0.14.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 160))
+  Downloading tiktoken-0.14.0-cp312-cp312-win_amd64.whl (941 kB)
+     ---------------------------------------- 941.2/941.2 kB 11.0 MB/s  0:00:00
+Collecting tinytag==2.3.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 161))
+  Downloading tinytag-2.3.0-py3-none-any.whl (37 kB)
+Collecting tokenizers==0.22.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 162))
+  Downloading tokenizers-0.22.2-cp39-abi3-win_amd64.whl (2.7 MB)
+     ---------------------------------------- 2.7/2.7 MB 1.6 MB/s  0:00:03
+Collecting torch==2.13.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 163))
+  Downloading torch-2.13.0-cp312-cp312-win_amd64.whl (122.1 MB)
+     ---------------------------------------- 122.1/122.1 MB 12.9 MB/s  0:00:09
+Collecting tqdm==4.70.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 164))
+  Downloading tqdm-4.70.0-py3-none-any.whl (80 kB)
+Collecting transformers==5.15.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 165))
+  Downloading transformers-5.15.0-py3-none-any.whl (11.7 MB)
+     ---------------------------------------- 11.7/11.7 MB 19.8 MB/s  0:00:00
+Collecting typer==0.27.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 166))
+  Downloading typer-0.27.1-py3-none-any.whl (122 kB)
+Collecting typing-inspect==0.9.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 167))
+  Downloading typing_inspect-0.9.0-py3-none-any.whl (8.8 kB)
+Collecting typing-inspection==0.4.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 168))
+  Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Collecting typing_extensions==4.16.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 169))
+  Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Collecting tzdata==2026.3 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 170))
+  Downloading tzdata-2026.3-py2.py3-none-any.whl (348 kB)
+Collecting urllib3==2.7.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 171))
+  Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+Collecting uuid_utils==0.17.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 172))
+  Downloading uuid_utils-0.17.0-cp312-cp312-win_amd64.whl (172 kB)
+Collecting uvicorn==0.51.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 173))
+  Downloading uvicorn-0.51.0-py3-none-any.whl (73 kB)
+Collecting watchfiles==1.2.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 174))
+  Downloading watchfiles-1.2.0-cp312-cp312-win_amd64.whl (288 kB)
+Collecting websocket-client==1.9.2 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 175))
+  Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Collecting websockets==15.0.1 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 176))
+  Downloading websockets-15.0.1-cp312-cp312-win_amd64.whl (176 kB)
+Collecting wrapt==2.3.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 177))
+  Downloading wrapt-2.3.0-cp312-cp312-win_amd64.whl (81 kB)
+Collecting xxhash==4.0.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 178))
+  Downloading xxhash-4.0.0-cp312-cp312-win_amd64.whl (36 kB)
+Collecting yarl==1.24.5 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 179))
+  Downloading yarl-1.24.5-cp312-cp312-win_amd64.whl (97 kB)
+Collecting zstandard==0.25.0 (from -r D:\pyhton\python椤圭洰\fastapixxxmmm\requirements.txt (line 180))
+  Downloading zstandard-0.25.0-cp312-cp312-win_amd64.whl (506 kB)
+Building wheels for collected packages: jieba
+  Building wheel for jieba (pyproject.toml): started
+  Building wheel for jieba (pyproject.toml): finished with status 'done'
+  Created wheel for jieba: filename=jieba-0.42.1-py3-none-any.whl size=19314527 sha256=d6049fe06de778857276574ccc5976f4d94a7454ba6251a1c9c2b99a74df6849
+  Stored in directory: c:\users\administrator\appdata\local\doubao\user data\sandbox_runtime\.cache\python\pip\wheels\7b\3a\3e\1bf625b8dd63d53265aad527b244647c679dff9b60588a324f
+Successfully built jieba
+Installing collected packages: sqlite-vec, PyPika, passlib, mpmath, jieba, flatbuffers, filetype, durationpy, dirtyjson, zstandard, xxhash, wrapt, websockets, websocket-client, uuid_utils, urllib3, tzdata, typing_extensions, tinytag, threadpoolctl, tenacity, sympy, sniffio, six, shellingham, setuptools, safetensors, rpds-py, regex, redis, PyYAML, python-dotenv, pyproject_hooks, PyMySQL, Pygments, pybase64, pyasn1, protobuf, propcache, pluggy, platformdirs, pillow, pamqp, overrides, ormsgpack, orjson, oauthlib, numpy, networkx, nest-asyncio, narwhals, mypy_extensions, multidict, mmh3, mdurl, marshmallow, MarkupSafe, jsonpointer, joblib, jiter, iniconfig, importlib_resources, idna, httpx-sse, httptools, hf-xet, h11, griffelib, greenlet, fsspec, frozenlist, filelock, et_xmlfile, distro, defusedxml, colorama, charset-normalizer, certifi, cachetools, bcrypt, attrs, annotated-types, annotated-doc, aiosqlite, aiohappyeyeballs, yarl, typing-inspection, typing-inspect, tqdm, SQLAlchemy, scipy, rsa, requests, referencing, rank-bm25, python-dateutil, pytest, pydantic_core, opentelemetry-proto, opentelemetry-api, openpyxl, onnxruntime, markdown-it-py, Mako, langchain-protocol, jsonpatch, Jinja2, httpcore, grpcio, griffecli, googleapis-common-protos, ecdsa, dotenv, Deprecated, click, build, anyio, aiosignal, watchfiles, uvicorn, torch, tiktoken, starlette, scikit-learn, rich, requests-toolbelt, requests-oauthlib, python-jose, pydantic, pandas, opentelemetry-semantic-conventions, opentelemetry-exporter-otlp-proto-common, nltk, jsonschema-specifications, httpx, griffe, dataclasses-json, alembic, aiormq, aiohttp, typer, pymilvus, pydantic-settings, opentelemetry-sdk, openai, ollama, llama-index-instrumentation, langsmith, kubernetes, jsonschema, huggingface_hub, fastapi, banks, aio-pika, tokenizers, opentelemetry-exporter-otlp-proto-grpc, llama-index-workflows, langchain-core, transformers, llama-index-core, langgraph-sdk, langgraph-checkpoint, langchain-text-splitters, langchain-ollama, langchain-milvus, chromadb, sentence-transformers, pymilvus.model, llama-index-llms-openai, llama-index-embeddings-openai, langgraph-prebuilt, langgraph-checkpoint-sqlite, langchain-classic, langchain-chroma, llama-index, langgraph, langchain-community, langchain-experimental, langchain
+  WARNING: The script filetype.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script websockets.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script wsdump.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script isympy.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 84.2.1
+    Uninstalling setuptools-84.2.1:
+      Successfully uninstalled setuptools-84.2.1
+  WARNING: The script dotenv.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pygmentize.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pybase64.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts f2py.exe and numpy-config.exe are installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script idna.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script distro.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script normalizer.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script tqdm.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts pyrsa-decrypt.exe, pyrsa-encrypt.exe, pyrsa-keygen.exe, pyrsa-priv2pub.exe, pyrsa-sign.exe and pyrsa-verify.exe are installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts py.test.exe and pytest.exe are installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script onnxruntime_test.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown-it.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script mako-render.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script griffecli.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pyproject-build.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script watchfiles.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script uvicorn.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts torchfrtrace.exe and torchrun.exe are installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script nltk.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script httpx.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script griffe.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script alembic.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script typer.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script llama-index-instrumentation.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script jsonschema.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts hf.exe, huggingface-cli.exe and tiny-agents.exe are installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script fastapi.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script transformers.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script chroma.exe is installed in 'D:\Tool\anaconda3\envs\bizflow\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+Successfully installed Deprecated-1.3.1 Jinja2-3.1.6 Mako-1.4.1 MarkupSafe-3.0.3 PyMySQL-1.2.0 PyPika-0.51.1 PyYAML-6.0.3 Pygments-2.20.0 SQLAlchemy-2.0.51 aio-pika-10.1.1 aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiormq-7.2.2 aiosignal-1.4.0 aiosqlite-0.22.1 alembic-1.20.0 annotated-doc-0.0.4 annotated-types-0.8.0 anyio-4.14.2 attrs-26.1.0 banks-2.5.0 bcrypt-4.0.1 build-1.6.1 cachetools-7.1.7 certifi-2026.7.22 charset-normalizer-3.5.0 chromadb-1.5.9 click-8.4.2 colorama-0.4.6 dataclasses-json-0.6.7 defusedxml-0.7.1 dirtyjson-1.0.8 distro-1.9.0 dotenv-0.9.9 durationpy-0.11 ecdsa-0.19.2 et_xmlfile-2.0.0 fastapi-0.140.0 filelock-3.32.3 filetype-1.2.0 flatbuffers-25.12.19 frozenlist-1.8.0 fsspec-2026.7.0 googleapis-common-protos-1.75.3 greenlet-3.5.4 griffe-2.2.0 griffecli-2.2.0 griffelib-2.2.0 grpcio-1.83.0 h11-0.16.0 hf-xet-1.6.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.28.1 httpx-sse-0.4.3 huggingface_hub-1.27.0 idna-3.18 importlib_resources-7.1.0 iniconfig-2.3.1 jieba-0.42.1 jiter-0.16.0 joblib-1.5.3 jsonpatch-1.33 jsonpointer-3.1.1 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 kubernetes-36.0.3 langchain-1.3.15 langchain-chroma-1.1.0 langchain-classic-1.0.8 langchain-community-0.4.2 langchain-core-1.5.4 langchain-experimental-0.4.2 langchain-milvus-0.4.0 langchain-ollama-1.1.0 langchain-protocol-0.0.18 langchain-text-splitters-1.1.2 langgraph-1.2.11 langgraph-checkpoint-4.3.1 langgraph-checkpoint-sqlite-3.1.3 langgraph-prebuilt-1.1.0 langgraph-sdk-0.4.2 langsmith-0.10.18 llama-index-0.14.24 llama-index-core-0.14.24 llama-index-embeddings-openai-0.6.0 llama-index-instrumentation-0.5.0 llama-index-llms-openai-0.7.10 llama-index-workflows-2.23.3 markdown-it-py-4.2.0 marshmallow-3.26.2 mdurl-0.1.2 mmh3-5.3.0 mpmath-1.3.0 multidict-6.7.1 mypy_extensions-1.1.0 narwhals-2.24.0 nest-asyncio-1.6.0 networkx-3.6.1 nltk-3.10.3 numpy-2.5.2 oauthlib-3.3.1 ollama-0.6.2 onnxruntime-1.30.0 openai-2.54.0 openpyxl-3.1.5 opentelemetry-api-1.44.0 opentelemetry-exporter-otlp-proto-common-1.44.0 opentelemetry-exporter-otlp-proto-grpc-1.44.0 opentelemetry-proto-1.44.0 opentelemetry-sdk-1.44.0 opentelemetry-semantic-conventions-0.65b0 orjson-3.11.9 ormsgpack-1.12.2 overrides-7.7.0 pamqp-4.0.1 pandas-3.0.5 passlib-1.7.4 pillow-12.3.0 platformdirs-4.11.4 pluggy-1.6.0 propcache-0.5.2 protobuf-7.35.1 pyasn1-0.6.4 pybase64-1.5.0 pydantic-2.13.4 pydantic-settings-2.15.0 pydantic_core-2.46.4 pymilvus-3.0.1 pymilvus.model-0.3.2 pyproject_hooks-1.2.0 pytest-9.1.1 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 python-jose-3.5.0 rank-bm25-0.2.2 redis-8.1.0 referencing-0.37.0 regex-2026.7.19 requests-2.34.2 requests-oauthlib-2.0.0 requests-toolbelt-1.0.0 rich-15.0.0 rpds-py-2026.6.3 rsa-4.9.1 safetensors-0.8.0 scikit-learn-1.9.0 scipy-1.18.0 sentence-transformers-5.7.0 setuptools-84.0.0 shellingham-1.5.4 six-1.17.0 sniffio-1.3.1 sqlite-vec-0.1.9 starlette-1.3.1 sympy-1.14.0 tenacity-9.1.4 threadpoolctl-3.6.0 tiktoken-0.14.0 tinytag-2.3.0 tokenizers-0.22.2 torch-2.13.0 tqdm-4.70.0 transformers-5.15.0 typer-0.27.1 typing-inspect-0.9.0 typing-inspection-0.4.2 typing_extensions-4.16.0 tzdata-2026.3 urllib3-2.7.0 uuid_utils-0.17.0 uvicorn-0.51.0 watchfiles-1.2.0 websocket-client-1.9.2 websockets-15.0.1 wrapt-2.3.0 xxhash-4.0.0 yarl-1.24.5 zstandard-0.25.0
+[17:25:31] pip exit code = 0
+[17:25:31] verify imports...
+CORE_OK
+torch 2.13.0+cpu cuda False
+chromadb 1.5.9
+langchain 1.3.15
+[17:26:32] done

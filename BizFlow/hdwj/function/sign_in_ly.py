@@ -2,7 +2,7 @@
 #登入和注册函数接口
 #登入
 from sqlalchemy.exc import IntegrityError
-
+from BizFlow.hdwj.Exception.exceptions import hdwjException
 from sqlalchemy.orm import Session
 from fastapi import  HTTPException
 from BizFlow.shujuku.user import users
@@ -42,9 +42,9 @@ def sign_in(name:str,password:str,db:Session):
                        "role": zw, "username": query_name.name,
                        "id": query_name.id, "token":token}
         else:
-            raise HTTPException(status_code=401,detail="密码错误了！")
+            raise hdwjException(401,"密码错误了！")
     else:
-        raise HTTPException(status_code=401,detail="您还没有登入哦，赶快登入！！")
+        raise hdwjException(401,"您还没有登入哦，赶快登入！！")
 
 #注册接口
 def sign_up(name:str,password:str,employee_id:int,position:str,db:Session):
@@ -69,14 +69,14 @@ def sign_up(name:str,password:str,employee_id:int,position:str,db:Session):
                     "role": "员工", "username": name}
         except IntegrityError as e:
             db.rollback()
-            raise HTTPException(status_code=500,detail=f"错误原因是{e}")
+            raise hdwjException(500,f"错误原因是{e}")
     else:
-        raise HTTPException(status_code=401,detail="该用户名或工号已经存在请重新注册")
+        raise hdwjException(409,"该用户名或工号已经存在请重新注册")
 
 #董事长验证接口：先校验验证码，再以“董事长”身份入库
 def sign_yz(name:str,password:str,employee_id:int,position:str,yz:str,db:Session):
     if yz != CHAIRMAN_KEY:
-        raise HTTPException(status_code=403, detail="密钥错误，你无权注册董事长")
+        raise hdwjException(403, "密钥错误，你无权注册董事长")
     query_name = db.query(users).filter(users.name == name).first()
     query_gh = db.query(users).filter(users.employee_ID == employee_id).first()
     if not query_name and not query_gh:
@@ -95,6 +95,6 @@ def sign_yz(name:str,password:str,employee_id:int,position:str,yz:str,db:Session
                     "role": "董事长", "username": name}
         except IntegrityError as e:
             db.rollback()
-            raise HTTPException(status_code=500,detail=f"错误原因是{e}")
+            raise hdwjException(500,f"错误原因是{e}")
     else:
-        raise HTTPException(status_code=401,detail="该用户名或工号已经存在请重新注册")
+        raise hdwjException(409,"该用户名或工号已经存在请重新注册")

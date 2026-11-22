@@ -6,6 +6,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
     env_file:
       - .env
     environment:
@@ -16,8 +18,25 @@ services:
       - PASSWORD=12345678
       - DATABASE=fastapi_sjk
       - DATABASE_URL=mysql+pymysql://root:12345678@mysql:3306/fastapi_sjk?charset=utf8mb4
+      # 容器里连 rabbitmq 服务；账号见下面的 rabbitmq 服务
+      - RABBITMQ_URL=amqp://bizflow:bizflow123@rabbitmq:5672/
       # 🚨 关键：解决 HuggingFace 下载失败
       - HF_ENDPOINT=https://hf-mirror.com
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    environment:
+      RABBITMQ_DEFAULT_USER: bizflow
+      RABBITMQ_DEFAULT_PASS: bizflow123
+    ports:
+      - "5672:5672"    # AMQP（后端连这个）
+      - "15672:15672"  # 管理台 http://localhost:15672
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
     restart: unless-stopped
 
   mysql:

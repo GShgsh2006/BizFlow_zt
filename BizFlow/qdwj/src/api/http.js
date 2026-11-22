@@ -16,8 +16,9 @@ http.interceptors.request.use((config) => {
 })
 
 // 响应拦截器：直接返回 data；401 时清空登录态并跳回登录页
+// 传 config.raw = true 时返回完整响应（需要读响应头，比如 X-Data-Source 用）
 http.interceptors.response.use(
-  (res) => res.data,
+  (res) => (res.config.raw ? res : res.data),
   (err) => {
     if (err.response && err.response.status === 401) {
       clearAuth()

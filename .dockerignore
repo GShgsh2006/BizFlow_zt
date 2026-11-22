@@ -1,4 +1,4 @@
-.venv
+docker run -d --name fastapixxxmmmr -p 8000:8000 fastapixxxmmm-app.venv
 venv_linux
 .git
 __pycache__

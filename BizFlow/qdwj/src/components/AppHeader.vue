@@ -18,6 +18,7 @@
         <template v-if="auth.role === '董事长'">
           <router-link to="/assign">分配任务</router-link>
           <router-link to="/review">审核</router-link>
+          <router-link to="/archive">档案导出</router-link>
         </template>
       </nav>
 

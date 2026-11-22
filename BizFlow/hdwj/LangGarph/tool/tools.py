@@ -2,6 +2,7 @@
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import tool
 from BizFlow.shujuku.user import yynj
+from BizFlow.hdwj.Exception.exceptions import hdwjException
 @tool
 def yyxx(name:str,config:RunnableConfig):
     """根据员工姓名查询其年假剩余天数。"""
@@ -16,7 +17,7 @@ def yyxx(name:str,config:RunnableConfig):
     else:
         name_id = db.query(yynj.name).filter(yynj.id == token_id).scalar()
         if name_id!=name:
-            raise HTTPException(status_code=500,detail="你只能访问自己的数据，无权访问别人的数据")
+            raise hdwjException(500,"你只能访问自己的数据，无权访问别人的数据")
         else:
             nj = db.query(yynj.days).filter(yynj.id==token_id).scalar()
             if nj is not None:
@@ -40,7 +41,7 @@ def salary(ids:int,config:RunnableConfig):
             Salary=sum([i.amount for i in renwu])
             return f"{name} 的工资总额为 {Salary} 元"
         else:
-            raise HTTPException(status_code=404,detail="数据库中找不到名字请重新输入")
+            raise hdwjException(404,"数据库中找不到名字请重新输入")
     else:
         if token_id!=ids:
             return "你只能查询你自己的工资，无权查看别人的工资!"
@@ -51,7 +52,7 @@ def salary(ids:int,config:RunnableConfig):
                 Salary = sum([i.amount for i in renwu])
                 return f"{name} 的工资总额为 {Salary} 元"
             else:
-                raise HTTPException(status_code=404, detail="数据库中找不到名字请重新输入")
+                raise hdwjException(404, "数据库中找不到名字请重新输入")
 
 
 
@@ -76,12 +77,12 @@ def distribute(rename:str,rwname:str,tasks:str,time:str,amount:int,config:Runnab
             db.commit()
             return f"已把任务「{rwname}」分配给 {rename}"
         else:
-            raise HTTPException(
-                status_code=404,
-                detail="数据库中没有此人物"
+            raise hdwjException(
+                404,
+                "数据库中没有此人物"
             )
     else:
-        raise HTTPException(status_code=500,detail="你无权使用这个能力")
+        raise hdwjException(500,"你无权使用这个能力")
 tools = [
     salary, yyxx, distribute
 ]
