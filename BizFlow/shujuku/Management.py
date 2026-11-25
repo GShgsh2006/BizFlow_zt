@@ -8,7 +8,8 @@ import logging
 # 固定加载 BizFlow/.env（相对本文件向上两级），不依赖当前工作目录。
 # override=True 让 .env 里的值覆盖同名系统变量（Windows 自带 USERNAME、
 # 部分 shell 自带 HOSTNAME，否则会覆盖 MySQL 账号/主机导致连接失败）。
-load_dotenv(r"D:\编程知识\编程知识\python\python项目\fastapixxxmmm\.env", override=True)
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+load_dotenv(PROJECT_ROOT / ".env", override=True)
 #数据库信息
 import os
 

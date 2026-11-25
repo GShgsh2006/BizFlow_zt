@@ -10,13 +10,12 @@ from BizFlow.hdwj.LangGarph.app import apps, resume_apps
 import time
 routeragent=APIRouter()
 last_request_time = {}
-#token 必须用 Depends 注入。直接写 token:dict，FastAPI 会把它当成「第二个请求体字段」，
-#于是 /agent 要求 body 变成 {"a": {...}, "token": {...}}，前端发 {request} 直接 422。
 @routeragent.post("/agent")
 async def chat(a:appskk, token:dict=Depends(get_current_user),db: Session = Depends(get_db)):
     now = time.time()
+    ids=token.get("id")
 
-    last_time = last_request_time.get("ids")
+    last_time = last_request_time.get(f"{ids}")
 
     if last_time is not None:
         if now - last_time < 1:
@@ -26,7 +25,7 @@ async def chat(a:appskk, token:dict=Depends(get_current_user),db: Session = Depe
             )
 
     # 记录本次请求时间
-    last_request_time["ids"] = now
+    last_request_time[f"{ids}"] = now
 
     return StreamingResponse(
             apps(a.request, db,token,a.session_id),

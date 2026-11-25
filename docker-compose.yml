@@ -53,6 +53,7 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+    restart: unless-stopped   # 电脑/Docker 重启后自动拉起，不用手动再启
 
 volumes:
   mysql_data:

@@ -84,4 +84,6 @@ async def load_history(thread_id: str) -> list[Any]:
     if tup is None:
         return []
     values = tup.checkpoint.get("channel_values") or {}
-    return list(values.get("messages") or [])
+    values_sxw=list(values.get("messages") or [])
+    context=values_sxw[-5:]
+    return context

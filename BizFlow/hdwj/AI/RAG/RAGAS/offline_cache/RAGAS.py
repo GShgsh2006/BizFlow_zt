@@ -4,7 +4,7 @@
 import json
 import re
 
-from BizFlow.hdwj.AI.RAG.RAGAS.RAGas import _text, _judge
+from BizFlow.hdwj.AI.RAG.RAGAS.RAGas import _text, _get_judge
 
 
 async def context(sxw: list, reference: str):
@@ -50,7 +50,7 @@ async def context(sxw: list, reference: str):
     }}
     """
 
-    text = _text(await _judge.ainvoke(prompt))
+    text = _text(await _get_judge().ainvoke(prompt))
     # prompt 要的是 {"score": 0.0, "reason": "..."} 对象，不是数组。
     # 原来用 _json_array 解析，永远只能拿到 []，得分恒为 0。
     match = re.search(r"\{.*\}", text, re.S)

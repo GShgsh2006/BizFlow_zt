@@ -54,8 +54,8 @@ def gly_sh(
         )
     query = query.strip()
     status_map = {
-        "通过审核": ("审核通过", "已完成"),
-        "审核不通过": ("审核未通过", "审核未通过"),
+        "通过审核": "已完成",
+        "审核不通过":  "审核未通过",
     }
     if query not in status_map:
         raise hdwjException(
@@ -70,7 +70,11 @@ def gly_sh(
             "找不到对应的任务记录"
         )
 
-    task_rw = db.query(task).filter(task.name == shuju.name_rw).first()
+    # 任务名可能重名（同名任务分给不同人），必须同时按提交人匹配，否则会改到别人的任务上
+    task_rw = db.query(task).filter(
+        task.name == shuju.name_rw,
+        task.assignee_id == shuju.assignee_id,
+    ).first()
     if not task_rw:
         raise hdwjException(
 404,  "关联的主任务不存在"

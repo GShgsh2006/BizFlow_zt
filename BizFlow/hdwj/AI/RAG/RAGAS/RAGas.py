@@ -6,18 +6,26 @@ import asyncio
 import json
 import re
 
-from langchain_ollama import ChatOllama
 from sqlalchemy.orm import Session
 
 from BizFlow.hdwj.AI.RAG.tool.yyqga import get_embeddings
 
-_judge = ChatOllama(
-    model="qwen3:1.7b",
-    base_url="http://localhost:11434",
-    temperature=0,
-    reasoning=False,
-    num_predict=256,
-)
+_judge = None
+
+
+def _get_judge():
+    """复用 lifespan 里初始化好的模型单例，只限制生成长度。"""
+    global _judge
+    if _judge is None:
+        from BizFlow.hdwj.AI.RAG.model import get_llm
+
+        # num_predict / temperature 属于 Ollama options；
+        # 显式带上 temperature=0，保持评分结果稳定
+        _judge = get_llm().bind(
+            options={"num_predict": 256, "temperature": 0},
+            reasoning=False,
+        )
+    return _judge
 
 _VERIFY_BATCH = 4
 
@@ -50,7 +58,7 @@ async def decompose(answer: str) -> list[str]:
 
 输出格式：["声明1", "声明2"]
 """
-    return _json_array(_text(await _judge.ainvoke(prompt)))
+    return _json_array(_text(await _get_judge().ainvoke(prompt)))
 
 
 async def verify(statement: str, contexts: list[str]) -> bool:
@@ -64,7 +72,7 @@ async def verify(statement: str, contexts: list[str]) -> bool:
 声明：
 {statement}
 """
-    return _text(await _judge.ainvoke(prompt)).strip().lower().startswith(("yes", "true", "是", "能", "可以", "正确"))
+    return _text(await _get_judge().ainvoke(prompt)).strip().lower().startswith(("yes", "true", "是", "能", "可以", "正确"))
 
 
 async def _supported_ratio(text: str, contexts: list[str]) -> float:
@@ -118,7 +126,7 @@ async def _reverse_questions(answer: str, n: int = 3) -> list[str]:
 
 输出格式：["问题1", "问题2", "问题3"]
 """
-    questions = _json_array(_text(await _judge.ainvoke(prompt)))[:n]
+    questions = _json_array(_text(await _get_judge().ainvoke(prompt)))[:n]
     # 模型不听话时兜底：拿回答自己当"问题"，分数会偏低但不会崩
     return questions or [answer[:80]]
 
@@ -167,7 +175,7 @@ async def Context_Precision(
     """
 
     result = _json_array(
-        _text(await _judge.ainvoke(prompt))
+        _text(await _get_judge().ainvoke(prompt))
     )
     # _json_array 统一返回字符串列表（["1","0",...]），
     # 直接和数字 1 比较永远不相等，必须先转成 int。

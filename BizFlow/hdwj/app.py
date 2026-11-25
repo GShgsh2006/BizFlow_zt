@@ -1,4 +1,14 @@
 #BizFlow 智能业务协作平台
+import sys
+from pathlib import Path
+
+# 支持直接 `python BizFlow/hdwj/app.py` 启动：
+# 直接运行脚本时 sys.path[0] 是 BizFlow/hdwj，导致 `import BizFlow` 失败，
+# 这里把项目根目录补进去。
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 import os
 def _normalize_no_proxy() -> None:
     for key in ("NO_PROXY", "no_proxy"):
@@ -102,6 +112,15 @@ async def lifespan(app: FastAPI):
         except Exception as e:
             logging.error("短期记忆 Checkpointer 初始化失败(Agent 记忆不可用): %s", e)
 
+    # ---------- 3.5 AI 模型初始化（lifespan 中创建并预热） ----------
+    # 9B 模型加载慢，放后台线程，避免卡住启动；失败不影响核心业务
+    try:
+        from BizFlow.hdwj.AI.RAG.model import init_llm
+
+        threading.Thread(target=init_llm, name="llm-warmup", daemon=True).start()
+    except Exception as e:
+        logging.warning("AI 模型初始化已跳过: %s", e)
+
     # ---------- 4. RabbitMQ ----------
     # 启动阶段直接连，失败按配置重试；仍失败也不阻塞启动，后台巡检继续重试
     connected = await start_with_retry()
@@ -171,4 +190,5 @@ app.add_middleware(
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    app_port = int(os.getenv("APP_PORT", "8001"))
+    uvicorn.run(app, host="127.0.0.1", port=app_port)
